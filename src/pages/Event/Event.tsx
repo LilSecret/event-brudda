@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import "./styles.css";
 
 function Event() {
   const { id } = useParams();
