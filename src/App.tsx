@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import HostAnEvent from "./pages/HostAnEvent/HostAnEvent";
 import HomePage from "./pages/Home/Home";
 import Event from "./pages/Event/Event";
