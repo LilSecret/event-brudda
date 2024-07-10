@@ -2,6 +2,7 @@
 
 :root {
   --clr-neutral-100: #ededed;
+  --clr-neutral-200: #c3c7c7;
   --clr-neutral-400: #a4a7a7;
   --clr-neutral-900: #272626;
 
@@ -44,12 +45,8 @@ svg {
 
 a {
   font-family: inherit;
+  color: inherit;
   text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-  font-size: inherit;
 }
 
 /* Container  */

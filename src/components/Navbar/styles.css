@@ -1,0 +1,60 @@
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  gap: 17px;
+  padding-left: none;
+  list-style-type: none;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  color: var(--clr-primary-900);
+
+  &:hover,
+  &:focus {
+    color: var(--clr-accent-400);
+  }
+}
+
+.nav-icon {
+  color: var(--clr-primary-900);
+  cursor: pointer;
+  font-size: 19px;
+  transition: 300ms ease;
+  border-radius: 4px;
+  padding: 8px;
+
+  &:hover {
+    background-color: var(--clr-accent-400);
+    transform: scale(1.1);
+  }
+}
+
+.profile-img {
+  width: 30px;
+  height: 30px;
+  background-image: url("/public/male-profile-img.avif");
+  border-radius: 100rem;
+  background-position: center;
+  background-size: cover;
+  outline: solid 2px var(--clr-primary-900);
+  outline-offset: 2px;
+  cursor: pointer;
+  transition: 300ms ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    outline-color: var(--clr-accent-400);
+  }
+}
