@@ -26,6 +26,10 @@
   }
 }
 
+.nav-icon-wrapper {
+  position: relative;
+}
+
 .nav-icon {
   color: var(--clr-primary-900);
   cursor: pointer;
@@ -36,8 +40,24 @@
 
   &:hover {
     background-color: var(--clr-accent-400);
-    transform: scale(1.1);
   }
+
+  &:hover + .nav-icon-tooltip {
+    opacity: 1;
+  }
+}
+
+.nav-icon-tooltip {
+  position: absolute;
+  transition: 300ms ease;
+  background-color: var(--clr-primary-200);
+  border-radius: 4px;
+  user-select: none;
+  padding: 6px 8px;
+  opacity: 0;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .profile-img {

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../Logo/Logo";
+import NavbarIcon from "./NavbarIcon";
 
 function Navbar() {
-  // const user = "charles";
-  const user = null;
+  const user = "charles";
+  // const user = null;
 
   return (
     <nav className="navbar main-inline-mw">
@@ -24,8 +24,8 @@ function Navbar() {
       </ul>
       {user && (
         <div className="nav-items">
-          <FontAwesomeIcon className="nav-icon" icon={faCalendarDays} />
-          <FontAwesomeIcon className="nav-icon" icon={faBell} />
+          <NavbarIcon icon={faCalendarDays} name="Schedule" />
+          <NavbarIcon icon={faBell} name="Notifications" />
           <div className="profile-img"></div>
         </div>
       )}
