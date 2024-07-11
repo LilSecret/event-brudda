@@ -13,6 +13,8 @@ import NewsletterSignUp from "./NewsletterSignUp";
 import FooterSocialIcon from "./FooterSocialIcon";
 
 function Footer() {
+  const isUserSubscribed = false;
+
   return (
     <footer className="footer">
       <div className="main-inline-mw">
@@ -103,7 +105,7 @@ function Footer() {
               </li>
             </FooterColumnList>
           </div>
-          <NewsletterSignUp />
+          {!isUserSubscribed && <NewsletterSignUp />}
         </div>
         <hr className="footer-spacer" />
         <div className="mx-auto">©2024 Brudda, LLC | All Rights Reserved</div>
