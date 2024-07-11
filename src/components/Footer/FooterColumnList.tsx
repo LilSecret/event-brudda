@@ -4,17 +4,13 @@ function FooterColumnList({
   heading,
   children,
 }: {
-  heading: ReactNode | string;
+  heading: string;
   children: ReactNode;
 }) {
   return (
     <div className="footer-column">
-      {typeof heading === "string" ? (
-        <h4 className="column-title-heading">Heading</h4>
-      ) : (
-        <div className="column-heading">{heading}</div>
-      )}
-      <ul>{children}</ul>
+      <h4 className="column-heading">{heading}</h4>
+      <ul className="footer-column-list">{children}</ul>
     </div>
   );
 }

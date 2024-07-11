@@ -10,87 +10,103 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import FooterColumnList from "./FooterColumnList";
 import NewsletterSignUp from "./NewsletterSignUp";
+import FooterSocialIcon from "./FooterSocialIcon";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="main-inline-mw">
         <div className="footer-header">
-          <FooterColumnList heading={<Logo type="light" />}>
-            <li>
-              <FontAwesomeIcon className="footer-icon" icon={faEnvelope} />
-              <span>jackson.graham@brudda.com</span>
-            </li>
-            <li>
-              <FontAwesomeIcon className="footer-icon" icon={faPhone} />
-              <span>+1 (208) 555-0112</span>
-            </li>
-            <li>
-              <div className="socials">
-                <a
-                  className="footer-social-icon"
-                  href="https://www.instagram.com"
-                >
-                  <FontAwesomeIcon icon={faInstagram} />
+          <div className="footer-left-hand">
+            <div className="footer-cta">
+              <Logo type="light" />
+              <ul className="footer-column-list">
+                <li>
+                  <FontAwesomeIcon className="footer-icon" icon={faEnvelope} />
+                  <span>jackson.graham@brudda.com</span>
+                </li>
+                <li>
+                  <FontAwesomeIcon className="footer-icon" icon={faPhone} />
+                  <span>+1 (208) 555-0112</span>
+                </li>
+                <li>
+                  <div className="socials">
+                    <FooterSocialIcon
+                      link="https://www.instagram.com"
+                      icon={faInstagram}
+                    />
+                    <FooterSocialIcon
+                      link="https://www.facebook.com"
+                      icon={faFacebook}
+                    />
+                    <FooterSocialIcon
+                      link="https://www.twitter.com"
+                      icon={faTwitter}
+                    />
+                    <FooterSocialIcon
+                      link="https://www.youtube.com"
+                      icon={faYoutube}
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <FooterColumnList heading="Pages">
+              <li>
+                <a className="footer-link" href="/">
+                  Home
                 </a>
-                <a
-                  className="footer-social-icon"
-                  href="https://www.facebook.com"
-                >
-                  <FontAwesomeIcon icon={faFacebook} />
+              </li>
+              <li>
+                <a className="footer-link" href="/events/host-an-event">
+                  Hosting
                 </a>
-                <a
-                  className="footer-social-icon"
-                  href="https://www.twitter.com"
-                >
-                  <FontAwesomeIcon icon={faTwitter} />
+              </li>
+              <li>
+                <a className="footer-link" href="/contact">
+                  Contact
                 </a>
-                <a
-                  className="footer-social-icon"
-                  href="https://www.youtube.com"
-                >
-                  <FontAwesomeIcon icon={faYoutube} />
+              </li>
+            </FooterColumnList>
+            <FooterColumnList heading="Help">
+              <li>
+                <a className="footer-link" href="/#faq">
+                  FAQ
                 </a>
-              </div>
-            </li>
-          </FooterColumnList>
-          <FooterColumnList heading="Pages">
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/events/host-an-event">Hosting</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
-          </FooterColumnList>
-          <FooterColumnList heading="Help">
-            <li>
-              <a href="/#faq">FAQ</a>
-            </li>
-            <li>
-              <a href="/contact">Contact Us</a>
-            </li>
-            <li>
-              <a href="/">Learn more</a>
-            </li>
-          </FooterColumnList>
-          <FooterColumnList heading="Legal">
-            <li>
-              <a href="/">Privacy</a>
-            </li>
-            <li>
-              <a href="/">Terms of Service</a>
-            </li>
-            <li>
-              <a href="/">Reserved Rights</a>
-            </li>
-          </FooterColumnList>
+              </li>
+              <li>
+                <a className="footer-link" href="/contact">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a className="footer-link" href="/">
+                  Learn more
+                </a>
+              </li>
+            </FooterColumnList>
+            <FooterColumnList heading="Legal">
+              <li>
+                <a className="footer-link" href="/">
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a className="footer-link" href="/">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a className="footer-link" href="/">
+                  Reserved Rights
+                </a>
+              </li>
+            </FooterColumnList>
+          </div>
           <NewsletterSignUp />
         </div>
         <hr className="footer-spacer" />
-        <span>@ 2040 Brudda, LLC | All Rights Reserved</span>
+        <div className="mx-auto">©2024 Brudda, LLC | All Rights Reserved</div>
       </div>
     </footer>
   );
