@@ -69,6 +69,21 @@
   }
 }
 
+.input {
+  padding: 9px 10px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid currentColor;
+  width: 100%;
+  border-radius: 2px;
+  font-family: var(--ff-base);
+
+  &[data-type="light"] {
+    color: var(--clr-neutral-100);
+    border: solid 1px var(--clr-neutral-100);
+  }
+}
+
 .tooltip {
   display: inline-block;
   border-radius: 6px;
