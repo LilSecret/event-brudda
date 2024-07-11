@@ -1,8 +1,6 @@
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import "./styles.css";
 import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 export default function HomePage() {
   return (
@@ -11,8 +9,24 @@ export default function HomePage() {
         <Navbar />
       </header>
       <main>
-        <section className="section"></section>
+        <section className="section">
+          <h2>Discover and Attend Exciting Events</h2>
+          <div className="events-navigation">
+            <div className="left-hand">
+              <div className="btn"></div>
+            </div>
+            <div className="right-hand">
+              <div className="btn" data-type="primary">
+                All Events
+              </div>
+              <div className="btn" data-type="outline">
+                Outline{"asdf"}
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+      <Footer />
     </>
   );
 }

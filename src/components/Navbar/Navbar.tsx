@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <nav className="navbar main-inline-mw">
-      <Logo />
+      <Logo type="dark" />
       <ul className="nav-links">
         <li className="nav-link">
           <a href="#events">Events</a>

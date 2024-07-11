@@ -49,6 +49,11 @@ a {
   text-decoration: none;
 }
 
+ul {
+  padding-left: none;
+  list-style-type: none;
+}
+
 /* Container  */
 .main-inline-mw {
   margin-inline: auto;
