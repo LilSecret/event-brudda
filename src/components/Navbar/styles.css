@@ -63,7 +63,7 @@
 .profile-img {
   width: 30px;
   height: 30px;
-  background-image: url("/public/male-profile-img.avif");
+  background-image: url("/male-profile-img.avif");
   border-radius: 100rem;
   background-position: center;
   background-size: cover;
