@@ -1,0 +1,8 @@
+.mx-auto {
+  display: inline-block;
+  margin-inline: auto;
+}
+
+.text-center {
+  text-align: center;
+}
