@@ -73,7 +73,8 @@
 
   &[data-type="outline"] {
     background-color: transparent;
-    border: solid 2px var(--clr-primary-900);
+    outline: solid 2px var(--clr-primary-900);
+    outline-offset: -2px;
   }
   &[data-type="accent"] {
     background-color: var(--clr-accent-400);
