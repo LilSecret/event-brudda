@@ -1,0 +1,38 @@
+body {
+  margin-top: 7%;
+  background-color: var(--clr-primary-200) !important;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5625rem;
+}
+
+.auth-form {
+  color: var(--clr-primary-900);
+  max-width: 440px;
+  margin-inline: auto;
+  border-radius: 18px;
+  padding: 30px 34px;
+  background-color: var(--clr-neutral-100);
+}
+
+.form-actions {
+  margin-top: 15px;
+}
+
+.form-inputs {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-text {
+  margin-top: 15px;
+}
+
+.link {
+  color: var(--clr-accent-400);
+}
