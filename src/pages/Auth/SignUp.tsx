@@ -1,5 +1,5 @@
 import TextInput from "../../components/Form/TextInput";
-import TextSeparator from "../../components/Form/TextSeparator";
+import TextSeparator from "../../components/TextSeparator/TextSeparator";
 import Logo from "../../components/Logo/Logo";
 import "./styles.css";
 

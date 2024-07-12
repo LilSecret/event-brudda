@@ -1,0 +1,10 @@
+.text-separator {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  color: var(--clr-neutral-200);
+}
+
+.separator-text {
+  margin-inline: 7px;
+}
