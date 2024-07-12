@@ -37,13 +37,6 @@
   gap: 8px;
 }
 
-.footer-spacer {
-  margin-block: 24px;
-  height: 1px;
-  border: none;
-  background-color: currentColor;
-}
-
 .footer-link {
   &:hover {
     color: var(--clr-neutral-100);

@@ -107,7 +107,7 @@ function Footer() {
           </div>
           {!isUserSubscribed && <NewsletterSignUp />}
         </div>
-        <hr className="footer-spacer" />
+        <hr className="line" />
         <div className="mx-auto">©2024 Brudda, LLC | All Rights Reserved</div>
       </div>
     </footer>
