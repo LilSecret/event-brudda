@@ -18,12 +18,12 @@ function App() {
         <Route path=":id" element={<Event />} />
         <Route path="host-an-event" element={<HostAnEvent />} />
       </Route>
-      <Route path="/contact" element={<ContactUs />} />
+      <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/user/:id" element={<User />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="*" element={<NotFound />} />
       <Route path="/login" element={<Login />} />
       <Route path="/sign-up" element={<SignUp />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
