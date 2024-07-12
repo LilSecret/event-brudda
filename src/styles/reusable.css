@@ -98,6 +98,14 @@
   }
 }
 
+.line {
+  margin-block: 20px;
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: currentColor;
+}
+
 .tooltip {
   display: inline-block;
   border-radius: 6px;
