@@ -13,13 +13,13 @@ function Navbar() {
       <Logo type="dark" />
       <ul className="nav-links">
         <li className="nav-link">
-          <a href="#events">Events</a>
+          <a href="/#events">Events</a>
         </li>
         <li className="nav-link">
           <a href="/events/host-an-event">Hosting</a>
         </li>
         <li className="nav-link">
-          <a href="#about">About</a>
+          <a href="/#about">About</a>
         </li>
       </ul>
       {user && (
