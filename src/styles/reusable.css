@@ -57,6 +57,8 @@
 
 .tag {
   background-color: var(--clr-primary-400);
+  display: inline-block;
+  text-align: center;
   font-weight: bold;
   cursor: pointer;
   font-family: var(--ff-base);
