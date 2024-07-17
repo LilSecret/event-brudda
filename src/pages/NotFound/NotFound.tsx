@@ -7,7 +7,7 @@ function NotFound() {
       <header className="logo">
         <Logo type="dark" />
       </header>
-      <main className="main main-inline-mw">
+      <main className="even-columns main-inline-mw" data-type="narrow">
         <div className="error-img"></div>
         <div className="content">
           <h2 className="heading">Not Found (404)</h2>
