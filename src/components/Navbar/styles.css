@@ -1,5 +1,6 @@
 .navbar {
   align-items: center;
+  padding-block: 1.2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -71,6 +72,7 @@
   outline-offset: 2px;
   cursor: pointer;
   transition: 300ms ease;
+  margin-left: 3px;
 
   &:hover,
   &:focus {
