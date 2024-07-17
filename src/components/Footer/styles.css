@@ -2,6 +2,7 @@
   background-color: var(--clr-neutral-900);
   color: rgba(237, 237, 237, 0.592);
   padding-block: 60px 10px;
+  margin-top: auto;
 }
 
 .footer-header {
