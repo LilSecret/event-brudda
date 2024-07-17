@@ -17,3 +17,10 @@
     max-width: 900px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .even-columns {
+    display: grid;
+    justify-items: center;
+  }
+}
