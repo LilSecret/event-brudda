@@ -1,0 +1,16 @@
+.main {
+  margin-top: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-img {
+  width: 300px;
+  height: 250px;
+  background-image: url("/contact-feedback.png");
+  margin-top: 40px;
+  align-self: center;
+}
