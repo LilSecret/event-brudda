@@ -40,6 +40,10 @@ body {
   font-family: var(--ff-base);
 }
 
+main {
+  margin-bottom: 40px;
+}
+
 picture,
 img,
 svg {

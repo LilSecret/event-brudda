@@ -57,7 +57,7 @@
 
 .tag {
   background-color: var(--clr-primary-400);
-  display: inline-block;
+  display: inline-flex;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
@@ -68,6 +68,7 @@
   color: var(--clr-primary-900);
 
   &[data-size="full-bleed"] {
+    display: block;
     width: 100%;
   }
 
@@ -90,6 +91,7 @@
   padding: 9px 10px;
   background-color: transparent;
   outline: none;
+  resize: none;
   border: 1px solid currentColor;
   width: 100%;
   border-radius: 2px;
