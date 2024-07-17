@@ -6,3 +6,7 @@
 .text-center {
   text-align: center;
 }
+
+.clr-accent-400 {
+  color: var(--clr-accent-400);
+}

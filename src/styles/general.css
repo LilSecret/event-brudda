@@ -54,10 +54,3 @@ ul {
   padding-left: none;
   list-style-type: none;
 }
-
-/* Container  */
-.main-inline-mw {
-  margin-inline: auto;
-  max-width: 1280px;
-  padding: 2rem;
-}

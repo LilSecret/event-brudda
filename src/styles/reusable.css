@@ -118,3 +118,29 @@
   font-family: var(--ff-base);
   padding: 7px 9px;
 }
+
+.form {
+  color: var(--clr-primary-900);
+  border-radius: 18px;
+  padding: 30px 34px;
+  background-color: var(--clr-neutral-100);
+}
+
+.form-actions {
+  margin-top: 15px;
+}
+
+.form-inputs {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-text {
+  margin-top: 15px;
+}
+
+.link {
+  color: var(--clr-accent-400);
+}
