@@ -9,7 +9,7 @@ function Login() {
         <Logo type="dark" />
       </header>
       <main>
-        <form action="#" className="auth-form">
+        <form action="#" className="form auth-form">
           <h2 className="heading">Sign In</h2>
           <div className="form-inputs">
             <TextInput label="User Name" name="username" type="text" />

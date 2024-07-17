@@ -10,7 +10,7 @@ function SignUp() {
         <Logo type="dark" />
       </header>
       <main>
-        <form action="#" className="auth-form">
+        <form action="#" className="form auth-form">
           <h2 className="heading">Sign Up</h2>
           <p>Welcome to Brudda!</p>
           <div className="form-inputs">
