@@ -9,7 +9,7 @@ function UserCard({ user }: { user: TUser }) {
     <div className="user-card">
       <img
         className="user-profile-img"
-        src={profileImg}
+        src={profileImg ? profileImg : "/default-profile.svg"}
         alt="user profile img"
       />
       <h4 className="heading">{fullName}</h4>
