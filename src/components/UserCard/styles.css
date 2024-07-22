@@ -1,0 +1,24 @@
+.user-card {
+  border: solid 2px var(--clr-primary-400);
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 15px;
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}
+
+.user-profile-img {
+  width: 60px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 10px;
+  border-radius: 100rem;
+}
+
+.user-username {
+  color: var(--clr-accent-400);
+}
