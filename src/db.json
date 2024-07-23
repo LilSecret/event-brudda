@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": "95d2",
+      "username": "Nonya Business",
+      "password": "1234password",
+      "firstName": "Charles",
+      "lastName": "Marchant",
+      "state": null,
+      "profileImg": null
+    },
+    {
+      "id": "50de",
+      "username": "Bonna Petite",
+      "password": "password",
+      "firstName": "Jerry",
+      "lastName": "Springer",
+      "state": null,
+      "profileImg": null
+    }
+  ],
+  "userInterests": [],
+  "userNotifications": [],
+  "events": [],
+  "eventCategories": [],
+  "attendance": []
+}
