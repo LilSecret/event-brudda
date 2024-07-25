@@ -1,20 +1,20 @@
-import { HTMLInputTypeAttribute } from "react";
+import { ComponentProps } from "react";
 
 function TextInput({
   label,
   name,
-  type,
+  inputProps,
 }: {
   label: string;
   name: string;
-  type: HTMLInputTypeAttribute;
+  inputProps: ComponentProps<"input">;
 }) {
   return (
     <div className="text-input">
       <label className="input-label" htmlFor={name}>
         {label}
       </label>
-      <input type={type} className="input" required />
+      <input className="input" name={name} {...inputProps} required />
     </div>
   );
 }
