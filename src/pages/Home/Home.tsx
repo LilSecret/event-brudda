@@ -25,6 +25,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <section className="section text-center"></section>
       </main>
       <Footer />
     </>
