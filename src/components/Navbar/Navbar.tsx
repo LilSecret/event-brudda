@@ -3,10 +3,11 @@ import "./styles.css";
 import { faBell, faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../Logo/Logo";
 import NavbarIcon from "./NavbarIcon";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 
 function Navbar() {
-  const user = "charles";
-  // const user = null;
+  const user = useSelector((state: RootState) => state.authentication.user);
 
   return (
     <nav className="navbar main-inline-mw">
