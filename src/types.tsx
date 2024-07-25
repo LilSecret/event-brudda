@@ -10,15 +10,27 @@ export type TUser = {
   profileImg?: string;
 };
 
+export type TEventLocationType = "in-person" | "online" | "hybrid";
+
+export type TTimezone = "CDT" | "MDT" | "PDT" | "EDT";
+
 export type TEvent = {
-  eventId: number;
+  eventId: string;
   title: string;
-  date: Date;
+  date: string;
   time: string;
+  timezone: TTimezone;
   host: string;
+  summary: string;
   description: string;
   attendees: number;
-  thumbnail?: string;
+  thumbnail: string;
+  locationType: TEventLocationType;
+  link: string | null;
+  city: string | null;
+  state: TState | null;
+  streetAddress: string | null;
+  postalCode: number | null;
 };
 
 export type TEventLocation = {
