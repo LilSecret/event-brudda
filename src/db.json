@@ -21,7 +21,26 @@
   ],
   "userInterests": [],
   "userNotifications": [],
-  "events": [],
+  "events": [
+    {
+      "id": "fa9f",
+      "title": "Magic Music Show",
+      "date": "2024-07-25T21:54:57.210Z",
+      "time": "2:00 PM",
+      "timezone": "MDT",
+      "host": "John Robinson",
+      "summary": "Join us for our next Provo Tech Hangout! We're excited to bring together tech enthusiasts and professionals for a night of casual conversation, networking, and delicious food.",
+      "details": "Whether you're a seasoned tech professional or a student just starting your journey, this is a perfect opportunity to expand your network, share experiences, and make new friends. We look forward to seeing you there!",
+      "attendees": 22,
+      "thumbnail": "https://www.aleitevents.com/wp-content/uploads/2019/02/ABCF1-19-scaled.jpg",
+      "locationType": "in-person",
+      "link": null,
+      "city": "Salt Lake City",
+      "state": "Utah",
+      "streetAddress": "324 S 400 W STE 150",
+      "postalCode": 84101
+    }
+  ],
   "eventCategories": [],
   "attendance": []
 }

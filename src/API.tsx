@@ -17,3 +17,16 @@ const getAllUsers = () => {
 export const API_USERS = {
   getAllUsers,
 };
+
+const getAllEvents = () => {
+  return fetch(`${BASE_URL}/events`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((response) => response.json());
+};
+
+export const API_EVENTS = {
+  getAllEvents,
+};

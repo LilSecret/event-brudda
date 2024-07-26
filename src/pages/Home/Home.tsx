@@ -1,8 +1,20 @@
 import "./styles.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Event from "../../components/Event/Event";
+import { useEffect, useState } from "react";
+import { TEvent } from "../../types";
+import { API_EVENTS } from "../../API";
 
 export default function HomePage() {
+  const [events, setEvents] = useState<TEvent[]>([]);
+
+  useEffect(() => {
+    API_EVENTS.getAllEvents().then((res) => {
+      setEvents(res);
+    });
+  }, []);
+
   return (
     <>
       <header>
@@ -25,7 +37,11 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className="section text-center"></section>
+        <section className="section text-center">
+          {events.map((event) => {
+            return <Event event={event} />;
+          })}
+        </section>
       </main>
       <Footer />
     </>
