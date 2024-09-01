@@ -115,3 +115,5 @@ function Footer() {
 }
 
 export default Footer;
+
+export const Demo = () => {};

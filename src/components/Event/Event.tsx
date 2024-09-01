@@ -12,10 +12,17 @@ function Event({ event }: { event: TEvent }) {
       />
       <div className="event-line"></div>
       <div className="event-content">
-        <header>
+        <div className="event-upper">
           <h3 className="heading">Magic Music Show</h3>
           <p className="event-location">Maverick Center - West Valley</p>
-        </header>
+        </div>
+        <div className="event-lower">
+          <p>
+            A community fundraiser event held in a local park, featuring live
+            music, food trucks, and games for families.
+          </p>
+          <h6 className="">Thur 1/2 ~ 2:00 MST</h6>
+        </div>
       </div>
     </div>
   );
