@@ -25,6 +25,7 @@
 .btn {
   background-color: var(--clr-primary-400);
   cursor: pointer;
+  font-size: 18px;
   font-weight: bold;
   font-family: var(--ff-base);
   border: none;
@@ -69,6 +70,7 @@
   display: inline-flex;
   text-align: center;
   font-weight: bold;
+  font-size: 18px;
   cursor: pointer;
   font-family: var(--ff-base);
   border: none;
