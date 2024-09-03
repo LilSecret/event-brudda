@@ -27,6 +27,7 @@ export type TEvent = {
   thumbnail: string;
   locationType: TEventLocationType;
   link: string | null;
+  place: string;
   city: string | null;
   state: TState | null;
   streetAddress: string | null;
