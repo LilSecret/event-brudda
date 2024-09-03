@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import TextInput from "../../components/Form/TextInput";
 import Logo from "../../components/Logo/Logo";
-import "./styles.css";
 import { useState } from "react";
 import { authActions } from "../../state/Auth/authSlice";
+import styles from "./auth.module.css";
 
 function Login() {
   const dispatch = useDispatch();
@@ -12,13 +12,13 @@ function Login() {
   const [passwordInput, setPasswordInput] = useState("");
 
   return (
-    <>
-      <header className="logo">
-        <Logo type="dark" />
+    <div className={styles.page}>
+      <header className={styles["logo"]}>
+        <Logo type="light" />
       </header>
       <main>
         <form
-          className="form auth-form"
+          className={`form ${styles["auth-form"]}`}
           onSubmit={(e) => {
             e.preventDefault();
             setUsernameInput("");
@@ -29,7 +29,7 @@ function Login() {
           <div className="form-inputs">
             <TextInput
               label="User Name"
-              name="username"
+              id="username"
               inputProps={{
                 type: "text",
                 value: usernameInput,
@@ -40,7 +40,7 @@ function Login() {
             />
             <TextInput
               label="Password"
-              name="password"
+              id="password"
               inputProps={{
                 type: "password",
                 value: passwordInput,
@@ -52,7 +52,7 @@ function Login() {
           </div>
           <div className="form-actions">
             <button type="submit" className="tag" data-size="full-bleed">
-              Sign In
+              Log In
             </button>
             <p className="form-text">
               New to Brudda?{" "}
@@ -63,7 +63,7 @@ function Login() {
           </div>
         </form>
       </main>
-    </>
+    </div>
   );
 }
 
