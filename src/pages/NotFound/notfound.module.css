@@ -1,9 +1,19 @@
+.page {
+  background-color: var(--clr-neutral-100);
+  padding-top: 4.5rem;
+  height: 100vh;
+}
+
 .logo {
-  padding-top: 7%;
+  width: fit-content;
+  margin-inline: auto;
+  padding-block: 8px;
 }
 
 .content {
   color: var(--clr-primary-900);
+  background: var(--clr-neutral-100);
+  padding: 0.8rem 0.5rem;
 }
 
 .content-text {
