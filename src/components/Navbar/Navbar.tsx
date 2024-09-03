@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 
 function Navbar() {
-  const user = useSelector((state: RootState) => state.authentication.user);
+  const user = useSelector((state: RootState) => state.auth.user);
 
   return (
     <nav className="navbar main-inline-mw">
