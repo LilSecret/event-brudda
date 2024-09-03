@@ -1,45 +1,41 @@
 import { Link } from "react-router-dom";
-import "./styles.css";
-import { faBell, faCalendarDays } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../Logo/Logo";
 import NavbarIcon from "./NavbarIcon";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
+import styles from "./navbar.module.css";
+import NavLink from "./NavLink";
 
 function Navbar() {
   const user = useSelector((state: RootState) => state.auth.user);
 
   return (
-    <nav className="navbar main-inline-mw">
+    <nav className={`${styles.navbar} main-inline-mw`}>
       <Logo type="dark" />
-      <ul className="nav-links">
-        <li className="nav-link">
-          <a href="/#events">Events</a>
-        </li>
-        <li className="nav-link">
-          <a href="/events/host-an-event">Hosting</a>
-        </li>
-        <li className="nav-link">
-          <a href="/#about">About</a>
-        </li>
+      <ul className={styles["nav-links"]}>
+        <NavLink text="Events" link="/#events" />
+        <NavLink text="Hosting" link="/events/host-an-event" />
+        <NavLink text="About" link="/#about" />
       </ul>
-      {user && (
-        <div className="nav-items">
-          <NavbarIcon icon={faCalendarDays} name="Schedule" />
-          <NavbarIcon icon={faBell} name="Notifications" />
-          <div className="profile-img"></div>
-        </div>
-      )}
-      {!user && (
-        <div className="nav-items">
-          <Link className="btn" data-type="accent" to="/login">
-            Login
-          </Link>
-          <Link className="btn" data-type="outline" to="/">
-            Sign Up
-          </Link>
-        </div>
-      )}
+      <div className={styles["nav-items"]}>
+        {user && (
+          <>
+            <NavbarIcon icon={faCalendarDays} name="Schedule" />
+            <img className={styles["profile-img"]} src="/male-glasses.jpg" />
+          </>
+        )}
+        {!user && (
+          <>
+            <Link className="btn" data-type="accent" to="/login">
+              Login
+            </Link>
+            <Link className="btn" data-type="outline" to="/">
+              Sign Up
+            </Link>
+          </>
+        )}
+      </div>
     </nav>
   );
 }
