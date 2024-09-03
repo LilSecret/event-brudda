@@ -2,19 +2,19 @@ import { ComponentProps } from "react";
 
 function TextInput({
   label,
-  name,
+  id,
   inputProps,
 }: {
+  id: string;
   label: string;
-  name: string;
   inputProps: ComponentProps<"input">;
 }) {
   return (
     <div className="text-input">
-      <label className="input-label" htmlFor={name}>
+      <label className="input-label" htmlFor={id}>
         {label}
       </label>
-      <input className="input" name={name} {...inputProps} required />
+      <input className="input" id={id} name={id} {...inputProps} required />
     </div>
   );
 }
