@@ -3,8 +3,7 @@ import TextInput from "../../components/Form/TextInput";
 import Logo from "../../components/Logo/Logo";
 import "./styles.css";
 import { useState } from "react";
-import { login } from "../../state/Auth/authSlice";
-import { API_USERS } from "../../API";
+import { authActions } from "../../state/Auth/authSlice";
 
 function Login() {
   const dispatch = useDispatch();
@@ -24,11 +23,8 @@ function Login() {
             e.preventDefault();
             setUsernameInput("");
             setPasswordInput("");
-            dispatch(
-              login({ username: usernameInput, password: passwordInput })
-            );
-          }}
-        >
+            dispatch(authActions.login({ username: usernameInput, password: passwordInput }));
+          }}>
           <h2 className="heading">Sign In</h2>
           <div className="form-inputs">
             <TextInput

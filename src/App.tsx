@@ -5,7 +5,6 @@ import Event from "./pages/Event/Event";
 import NotFound from "./pages/NotFound/NotFound";
 import User from "./pages/User/User";
 import Profile from "./pages/Profile/Profile";
-import ContactUs from "./pages/Contact/ContactUs";
 import SignUp from "./pages/Auth/SignUp";
 import Login from "./pages/Auth/Login";
 
@@ -18,7 +17,6 @@ function App() {
         <Route path=":id" element={<Event />} />
         <Route path="host-an-event" element={<HostAnEvent />} />
       </Route>
-      <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/user/:id" element={<User />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/login" element={<Login />} />
