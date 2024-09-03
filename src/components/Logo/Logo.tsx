@@ -2,7 +2,7 @@ type TLogoType = "light" | "dark";
 
 function Logo({ type }: { type: TLogoType }) {
   return (
-    <a href="/">
+    <a title="Event Brudda" href="/">
       {type === "dark" ? (
         <img src="/logo-dark.svg" alt="event brudda logo" />
       ) : (
