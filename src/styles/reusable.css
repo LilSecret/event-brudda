@@ -37,6 +37,15 @@
     width: 100%;
   }
 
+  &[data-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: var(--clr-accent-400);
+    }
+  }
+
   &[data-type="outline"] {
     background-color: transparent;
     outline: solid 2px var(--clr-primary-900);
