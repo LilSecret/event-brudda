@@ -1,29 +1,28 @@
-import { TUser } from "../../types";
-import "./styles.css";
+import styles from "./testimonial.module.css";
 
-function Testimonial({ user, feedback }: { user: TUser; feedback: string }) {
-  const { firstName, lastName, username } = user;
-  const fullName = firstName + " " + lastName;
+type TProps = {
+  picture: string;
+  name: string;
+  username: string;
+  message: string;
+};
 
+function Testimonial({ picture, name, username, message }: TProps) {
   return (
-    <div className="testimonial-card">
-      <header className="testimonial-header">
-        <img
-          className="testimonial-user-img"
-          src="/sad-dog.png"
-          alt="user profile img"
-        />
-        <div className="testimonial-titles">
-          <h4 className="heading">{fullName}</h4>
-          <p className="testimonial-username">@{username}</p>
+    <div className={styles["testimonial"]}>
+      <header>
+        <img className={styles["testimonial-img"]} src={picture} alt="Testimonial Profile" />
+        <div className={styles["testimonial-subheading"]}>
+          <h3 className="heading">{name}</h3>
+          <p>@{username}</p>
         </div>
       </header>
-      <p>"{feedback}"</p>
-      <img
-        className="testimonial-rating"
-        src="/five-star-rating.png"
-        alt="5 star rating"
-      />
+      <div className={styles["testimonial-message"]}>
+        <p>{message}</p>
+      </div>
+      <div className={styles["testimonial-rating"]}>
+        <img src="/public/five-star-rating.png" alt="5 star rating" />
+      </div>
     </div>
   );
 }
