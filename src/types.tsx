@@ -8,6 +8,7 @@ export type TUser = {
   lastName: string;
   state?: string;
   profileImg?: string;
+  isSubscribed: boolean;
 };
 
 export type TEventLocationType = "in-person" | "online" | "hybrid";

@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { API_USERS } from "../../API";
 import { TUser } from "../../types";
-import toast from "react-hot-toast";
 
 interface AuthState {
   user: TUser | undefined;
@@ -18,6 +16,9 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state: AuthState, action: PayloadAction<TUser>) => {
+      if (action.payload.isSubscribed) {
+        state.isSubscribed = true;
+      }
       state.user = action.payload;
     },
     subscribe: (state) => {
