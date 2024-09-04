@@ -3,8 +3,12 @@ import FooterColumnList from "./FooterColumnList";
 import NewsletterSignUp from "./NewsletterSignUp";
 import FooterLink from "./FooterLink";
 import FooterCta from "./FooterCta";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 
 function Footer() {
+  const user = useSelector((state: RootState) => state.auth.user);
+
   return (
     <footer className={styles.footer}>
       <div className="main-inline-mw">
@@ -27,7 +31,7 @@ function Footer() {
               <FooterLink text="Reserved Rights" />
             </FooterColumnList>
           </div>
-          <NewsletterSignUp />
+          {user && <NewsletterSignUp />}
         </div>
         <hr className="line" />
         <div className="mx-auto">©2024 Brudda, LLC | All Rights Reserved</div>
