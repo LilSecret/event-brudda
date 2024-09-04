@@ -1,4 +1,5 @@
 import { ComponentProps } from "react";
+import styles from "./form.module.css";
 
 function TextInput({
   label,
@@ -10,7 +11,7 @@ function TextInput({
   inputProps: ComponentProps<"input">;
 }) {
   return (
-    <div className="text-input">
+    <div className={styles["text-input"]}>
       <label className="input-label" htmlFor={id}>
         {label}
       </label>

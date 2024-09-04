@@ -1,0 +1,8 @@
+.input-label {
+  margin-bottom: 7px;
+}
+
+.form-error {
+  padding-top: 4px;
+  color: var(--clr-red-400);
+}
