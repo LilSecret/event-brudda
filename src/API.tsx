@@ -1,30 +1,50 @@
+import { TUser } from "./types";
+
 const BASE_URL = "http://localhost:3000";
 
 // users
-const getAllUsers = () => {
-  return fetch(`${BASE_URL}/users`, {
-    method: "GET",
+const getAllUsers = async () => {
+  const response = await fetch(`${BASE_URL}/users`);
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch users.");
+  }
+  const data = await response.json();
+
+  return data;
+};
+
+const postUser = async (user: TUser) => {
+  const response = await fetch(`${BASE_URL}/users`, {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((response) => response.json());
+    body: JSON.stringify(user),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to add new user.");
+  }
+
+  const data = await response.json();
+  return data;
 };
-
-// const createUser = () => {
-
-// }
 
 export const API_USERS = {
   getAllUsers,
+  postUser,
 };
 
-const getAllEvents = () => {
-  return fetch(`${BASE_URL}/events`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((response) => response.json());
+const getAllEvents = async () => {
+  const response = await fetch(`${BASE_URL}/events`);
+
+  if (!response.ok) {
+    throw new Error("Failed to get events.");
+  }
+
+  const data = await response.json();
+  return data;
 };
 
 export const API_EVENTS = {
