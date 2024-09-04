@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import { TEvent } from "../../types";
 import { API_EVENTS } from "../../API";
 import styles from "./home.module.css";
-import AboutUs from "./AboutUs";
+import STestimonial from "./STestimonial";
+import SAboutUs from "./SAboutUs";
 
-export default function HomePage() {
+function HomePage() {
   const [events, setEvents] = useState<TEvent[]>([]);
 
   useEffect(() => {
@@ -43,9 +44,12 @@ export default function HomePage() {
             return <Event event={event} />;
           })}
         </section>
-        <AboutUs />
+        <SAboutUs />
+        <STestimonial />
       </main>
       <Footer />
     </>
   );
 }
+
+export default HomePage;

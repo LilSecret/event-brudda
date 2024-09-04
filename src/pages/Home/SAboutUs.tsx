@@ -1,6 +1,6 @@
 import styles from "./home.module.css";
 
-function AboutUs() {
+function SAboutUs() {
   return (
     <section className={`section ${styles["about-us"]}`}>
       <div className="main-inline-mw even-columns">
@@ -44,4 +44,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default SAboutUs;
