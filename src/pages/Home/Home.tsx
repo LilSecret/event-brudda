@@ -1,10 +1,11 @@
-import "./styles.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Event from "../../components/Event/Event";
 import { useEffect, useState } from "react";
 import { TEvent } from "../../types";
 import { API_EVENTS } from "../../API";
+import styles from "./home.module.css";
+import AboutUs from "./AboutUs";
 
 export default function HomePage() {
   const [events, setEvents] = useState<TEvent[]>([]);
@@ -42,6 +43,7 @@ export default function HomePage() {
             return <Event event={event} />;
           })}
         </section>
+        <AboutUs />
       </main>
       <Footer />
     </>
