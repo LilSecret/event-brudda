@@ -1,3 +1,7 @@
+.section {
+  padding-block: 4rem;
+}
+
 .even-columns {
   display: flex;
   flex-wrap: wrap;
