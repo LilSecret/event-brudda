@@ -1,7 +1,7 @@
 import Logo from "../../components/Logo/Logo";
-import styles from "./notfound.module.css";
+import styles from "./error.module.css";
 
-function NotFound() {
+function ErrorPage() {
   return (
     <div className={styles.page}>
       <header className={styles.logo}>
@@ -30,4 +30,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default ErrorPage;

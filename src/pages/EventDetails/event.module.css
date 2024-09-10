@@ -1,0 +1,5 @@
+.line {
+  background: var(--clr-neutral-900);
+  height: 1px;
+  width: 100%;
+}

@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import "./styles.css";
+import styles from "./event.module.css";
 
-function Event() {
+function EventDetailsPage() {
   const { id } = useParams();
 
   return <div>Event {id}</div>;
 }
 
-export default Event;
+export default EventDetailsPage;

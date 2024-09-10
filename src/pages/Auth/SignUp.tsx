@@ -3,7 +3,7 @@ import TextSeparator from "../../components/TextSeparator/TextSeparator";
 import Logo from "../../components/Logo/Logo";
 import styles from "./auth.module.css";
 
-function SignUp() {
+function SignUpPage() {
   return (
     <div className={styles.page}>
       <header className={styles.logo}>
@@ -48,4 +48,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignUpPage;

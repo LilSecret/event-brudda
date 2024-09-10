@@ -26,76 +26,69 @@ export type TPActiveTab =
   | "hosted"
   | "upcoming";
 
-function Profile() {
+function ProfilePage() {
   const [activeTab, setActiveTab] = useState<TPActiveTab>("publicInfo");
 
   return (
-    <div className="profile-page">
-      <header>
-        <Navbar />
-      </header>
+    <div className="profile-main">
+      <aside className="sidebar">
+        <ul className="navigation-sidebar">
+          <SidebarNavItem
+            icon={faEye}
+            label="Public Info"
+            tab="publicInfo"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <SidebarNavItem
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            icon={faAddressCard}
+            label="Account"
+            tab="account"
+          />
+          <SidebarNavItem
+            icon={faLock}
+            label="Security"
+            tab="security"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <SidebarNavItem
+            icon={faHeart}
+            label="Interests"
+            tab="interests"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <SidebarNavItem
+            icon={faSquareH}
+            label="Your Hosted Events"
+            tab="hosted"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <SidebarNavItem
+            icon={faCalendarWeek}
+            label="Upcoming Events"
+            tab="upcoming"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+        </ul>
+        <div className="sidebar-bar"></div>
+      </aside>
 
-      <main className="profile-main">
-        <aside className="sidebar">
-          <ul className="navigation-sidebar">
-            <SidebarNavItem
-              icon={faEye}
-              label="Public Info"
-              tab="publicInfo"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <SidebarNavItem
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-              icon={faAddressCard}
-              label="Account"
-              tab="account"
-            />
-            <SidebarNavItem
-              icon={faLock}
-              label="Security"
-              tab="security"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <SidebarNavItem
-              icon={faHeart}
-              label="Interests"
-              tab="interests"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <SidebarNavItem
-              icon={faSquareH}
-              label="Your Hosted Events"
-              tab="hosted"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <SidebarNavItem
-              icon={faCalendarWeek}
-              label="Upcoming Events"
-              tab="upcoming"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-          </ul>
-          <div className="sidebar-bar"></div>
-        </aside>
-
-        <div className="profile-content">
-          {activeTab === "publicInfo" && <PublicInfo />}
-          {activeTab === "account" && <ProfileAccount />}
-          {activeTab === "security" && <ProfileSecurity />}
-          {activeTab === "interests" && <ProfileInterests />}
-          {activeTab === "hosted" && <ProfileHosted />}
-          {activeTab === "upcoming" && <ProfileUpcoming />}
-        </div>
-      </main>
-      <Footer />
+      <div className="profile-content">
+        {activeTab === "publicInfo" && <PublicInfo />}
+        {activeTab === "account" && <ProfileAccount />}
+        {activeTab === "security" && <ProfileSecurity />}
+        {activeTab === "interests" && <ProfileInterests />}
+        {activeTab === "hosted" && <ProfileHosted />}
+        {activeTab === "upcoming" && <ProfileUpcoming />}
+      </div>
     </div>
   );
 }
 
-export default Profile;
+export default ProfilePage;

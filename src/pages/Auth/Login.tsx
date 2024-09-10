@@ -10,7 +10,7 @@ import { TUser } from "../../types";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-function Login() {
+function LoginPage() {
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -112,4 +112,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;
