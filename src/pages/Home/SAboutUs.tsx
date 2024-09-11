@@ -2,7 +2,7 @@ import styles from "./home.module.css";
 
 function SAboutUs() {
   return (
-    <section className={`section ${styles["about-us"]}`}>
+    <section className={`section ${styles["about-us"]}`} id="about">
       <div className="main-inline-mw even-columns">
         <div className={styles["about-content"]}>
           <h2 className="heading">Creating Memories with the People You Love</h2>

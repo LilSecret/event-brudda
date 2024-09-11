@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 
-function NavLink({ text, link }: { text: string; link?: string }) {
+function LinkNav({ text, to }: { text: string; to?: string }) {
   return (
     <li className={styles["nav-link"]}>
-      <a href={link ? link : "/"}>{text}</a>
+      <Link to={to ? to : "/"}>{text}</Link>
     </li>
   );
 }
 
-export default NavLink;
+export default LinkNav;
