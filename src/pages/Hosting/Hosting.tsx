@@ -1,4 +1,4 @@
-import "./styles.css";
+import styles from "./hosting.module.css";
 
 function HostingPage() {
   return <div>host Page</div>;
