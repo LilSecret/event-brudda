@@ -1,27 +1,27 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { TPActiveTab } from "./Profile";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../state/store";
+import { profileSActions, TPActivePage } from "../../state/Profile/profileSlice";
 
 function SidebarNavItem({
   icon,
   label,
-  tab,
-  activeTab,
-  setActiveTab,
+  page,
 }: {
   icon: IconDefinition;
   label: string;
-  tab: TPActiveTab;
-  activeTab: TPActiveTab;
-  setActiveTab: (tab: TPActiveTab) => void;
+  page: TPActivePage;
 }) {
+  const activePage = useSelector((state: RootState) => state.profilePage.activePage);
+  const dispatch = useDispatch();
+
+  const handlePageClick = () => {
+    dispatch(profileSActions.changeActivePage(page));
+  };
+
   return (
-    <li
-      className={`sidebar-tab ${activeTab === tab ? "active" : ""}`}
-      onClick={() => {
-        setActiveTab(tab);
-      }}
-    >
+    <li className={`sidebar-tab ${activePage === page ? "active" : ""}`} onClick={handlePageClick}>
       <FontAwesomeIcon icon={icon} />
       {label}
     </li>

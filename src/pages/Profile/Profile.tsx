@@ -1,6 +1,3 @@
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
-import "./styles.css";
 import {
   faAddressCard,
   faCalendarWeek,
@@ -16,76 +13,24 @@ import ProfileSecurity from "./ProfileSecurity";
 import ProfileInterests from "./ProfileInterests";
 import ProfileHosted from "./ProfileHosted";
 import ProfileUpcoming from "./ProfileUpcoming";
-import { useState } from "react";
-
-export type TPActiveTab =
-  | "publicInfo"
-  | "account"
-  | "security"
-  | "interests"
-  | "hosted"
-  | "upcoming";
+import ProfileSideBar from "./ProfileSideBar";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 
 function ProfilePage() {
-  const [activeTab, setActiveTab] = useState<TPActiveTab>("publicInfo");
+  const activePage = useSelector((state: RootState) => state.profilePage.activePage);
 
   return (
     <div className="profile-main">
-      <aside className="sidebar">
-        <ul className="navigation-sidebar">
-          <SidebarNavItem
-            icon={faEye}
-            label="Public Info"
-            tab="publicInfo"
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-          <SidebarNavItem
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            icon={faAddressCard}
-            label="Account"
-            tab="account"
-          />
-          <SidebarNavItem
-            icon={faLock}
-            label="Security"
-            tab="security"
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-          <SidebarNavItem
-            icon={faHeart}
-            label="Interests"
-            tab="interests"
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-          <SidebarNavItem
-            icon={faSquareH}
-            label="Your Hosted Events"
-            tab="hosted"
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-          <SidebarNavItem
-            icon={faCalendarWeek}
-            label="Upcoming Events"
-            tab="upcoming"
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-        </ul>
-        <div className="sidebar-bar"></div>
-      </aside>
+      <ProfileSideBar />
 
       <div className="profile-content">
-        {activeTab === "publicInfo" && <PublicInfo />}
-        {activeTab === "account" && <ProfileAccount />}
-        {activeTab === "security" && <ProfileSecurity />}
-        {activeTab === "interests" && <ProfileInterests />}
-        {activeTab === "hosted" && <ProfileHosted />}
-        {activeTab === "upcoming" && <ProfileUpcoming />}
+        {activePage === "publicInfo" && <PublicInfo />}
+        {activePage === "account" && <ProfileAccount />}
+        {activePage === "security" && <ProfileSecurity />}
+        {activePage === "interests" && <ProfileInterests />}
+        {activePage === "hosted" && <ProfileHosted />}
+        {activePage === "upcoming" && <ProfileUpcoming />}
       </div>
     </div>
   );
