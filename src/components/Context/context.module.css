@@ -1,0 +1,6 @@
+.context {
+  margin-top: 3rem;
+  margin-inline: auto;
+  max-width: 1400px;
+  color: var(--clr-primary-900);
+}
