@@ -1,29 +1,38 @@
-import { Route, Routes } from "react-router-dom";
-import HostAnEvent from "./pages/HostAnEvent/HostAnEvent";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./layouts/Root";
 import HomePage from "./pages/Home/Home";
-import Event from "./pages/Event/Event";
-import NotFound from "./pages/NotFound/NotFound";
-import User from "./pages/User/User";
-import Profile from "./pages/Profile/Profile";
-import SignUp from "./pages/Auth/SignUp";
-import Login from "./pages/Auth/Login";
+import EventDetailsPage from "./pages/EventDetails/EventDetails";
+import HostingPage from "./pages/Hosting/Hosting";
+import ProfilePage from "./pages/Profile/Profile";
+import ErrorPage from "./pages/Error/ErrorPage";
+import LoginPage from "./pages/Auth/Login";
+import SignUpPage from "./pages/Auth/SignUp";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: "events/", element: <HomePage /> },
+      { path: "events/:eventId", element: <EventDetailsPage /> },
+      { path: "events/hosting", element: <HostingPage /> },
+      { path: "profile", element: <ProfilePage /> },
+    ],
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/sign-up",
+    element: <SignUpPage />,
+  },
+]);
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/events">
-        <Route index element={<HomePage />} />
-        <Route path=":id" element={<Event />} />
-        <Route path="host-an-event" element={<HostAnEvent />} />
-      </Route>
-      <Route path="/user/:id" element={<User />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/sign-up" element={<SignUp />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
