@@ -31,7 +31,7 @@ function Navigation() {
               <Link className="btn" data-type="accent" to="/login">
                 Login
               </Link>
-              <Link className="btn" data-type="outline" to="/">
+              <Link className="btn" data-type="outline" to="/sign-up">
                 Sign Up
               </Link>
             </>
