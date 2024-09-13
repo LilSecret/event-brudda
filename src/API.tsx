@@ -11,10 +11,10 @@ const getAllUsers = async () => {
   }
   const data = await response.json();
 
-  return data;
+  return data as TUser[];
 };
 
-const postUser = async (user: TUser) => {
+const postUser = async (user: Omit<TUser, "id">) => {
   const response = await fetch(`${BASE_URL}/users`, {
     method: "POST",
     headers: {
@@ -27,8 +27,7 @@ const postUser = async (user: TUser) => {
     throw new Error("Failed to add new user.");
   }
 
-  const data = await response.json();
-  return data;
+  return response;
 };
 
 export const API_USERS = {
