@@ -160,6 +160,10 @@
 
 .link {
   color: var(--clr-accent-400);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .error {
