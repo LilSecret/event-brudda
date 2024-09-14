@@ -1,7 +1,23 @@
+import { ErrorResponse, Link, useRouteError } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import styles from "./error.module.css";
 
 function ErrorPage() {
+  const error = useRouteError() as ErrorResponse;
+
+  let title = "Something went wrong";
+  let message = "";
+
+  if (error.status === 404) {
+    title = "404 Not Found";
+    message = "Failed to find page or resource.";
+  }
+
+  if (error.status >= 500) {
+    title = `${error.status} Failed to Fetch`;
+    message = error.data.message;
+  }
+
   return (
     <div className={styles.page}>
       <header className={styles.logo}>
@@ -13,16 +29,17 @@ function ErrorPage() {
           <h2 className="heading">Not Found (404)</h2>
           <h3 className="heading">Oops!</h3>
           <div className={styles["content-text"]}>
-            <p>The page you have entered does not exist.</p>
+            <h2 className="heading">{title}</h2>
 
-            <p>
-              Please make your way back to our home page by clicking on the "Brudda" logo above. If
-              you have any questions please{" "}
-              <a className="link" href="/contact-us">
+            <p>{message}.</p>
+            <div className={styles["link-actions"]}>
+              <Link className="link" to="/#contact">
                 Contact Us
-              </a>
-              .
-            </p>
+              </Link>
+              <Link className="link" to="/">
+                Home Page
+              </Link>
+            </div>
           </div>
         </div>
       </main>

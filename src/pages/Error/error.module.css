@@ -27,6 +27,11 @@
   color: var(--clr-accent-900);
 }
 
+.link-actions {
+  display: flex;
+  gap: 6px;
+}
+
 .error-img {
   outline: solid 2px var(--clr-primary-900);
   outline-offset: -5px;
