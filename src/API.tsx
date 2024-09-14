@@ -30,8 +30,16 @@ const postUser = async (user: Omit<TUser, "id">) => {
   return response;
 };
 
+const getUserInfo = async (username: string) => {
+  const allUsers = await getAllUsers();
+  const matchedUser = allUsers.find((user: TUser) => user.username === username);
+
+  return matchedUser;
+};
+
 export const API_USERS = {
   getAllUsers,
+  getUserInfo,
   postUser,
 };
 
