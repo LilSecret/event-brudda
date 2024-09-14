@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import styles from "./form.module.css";
 
-function TextInput({
+function FormInput({
   label,
   id,
   inputProps,
@@ -20,4 +20,4 @@ function TextInput({
   );
 }
 
-export default TextInput;
+export default FormInput;
