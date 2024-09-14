@@ -16,7 +16,7 @@ export type TEventLocationType = "in-person" | "online" | "hybrid";
 export type TTimezone = "CDT" | "MDT" | "PDT" | "EDT";
 
 export type TEvent = {
-  eventId: string;
+  id: string;
   title: string;
   date: string;
   time: string;
