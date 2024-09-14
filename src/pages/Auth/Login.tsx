@@ -1,14 +1,14 @@
 import { useDispatch } from "react-redux";
-import TextInput from "../../components/Form/TextInput";
 import Logo from "../../components/Logo/Logo";
 import { FormEvent, useState } from "react";
 import { authActions } from "../../state/Auth/authSlice";
 import styles from "./auth.module.css";
 import { API_USERS } from "../../API";
 import FormError from "../../components/Form/FormError";
-import { TUser } from "../../types";
-import { useNavigate } from "react-router-dom";
+import { json, Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import FormBtnLoader from "../../components/Loaders/FormSubmitLoader";
+import FormInput from "../../components/Form/FormInput";
 
 function LoginPage() {
   const [usernameInput, setUsernameInput] = useState("");
@@ -38,25 +38,27 @@ function LoginPage() {
 
     setLoading(true);
     try {
-      const users = (await API_USERS.getAllUsers()) as TUser[];
-      const foundUser = users.find((user) => user.username === usernameInput);
-
+      const foundUser = await API_USERS.getUserInfo(usernameInput);
       setLoading(false);
       if (!foundUser) {
         setError("The username you entered is not signed up.");
         return;
-      } else {
-        if (foundUser.password !== passwordInput) {
-          setError("You entered an incorrect password. Try again!");
-          return;
-        }
-        toast.success(`👋 Welcome in ${foundUser.username}`);
-        dispatch(authActions.login(foundUser));
-        resetForm();
-        navigate("/");
       }
+      if (foundUser.password !== passwordInput) {
+        setError("You entered an incorrect password. Try again!");
+        return;
+      }
+      toast.success(`👋 Welcome in ${foundUser.username}`);
+      dispatch(authActions.login(foundUser));
+      resetForm();
+      navigate("/");
     } catch (error) {
-      setError((error as string) || "Unable to fetch users");
+      throw json(
+        { message: "Failed to fetch users! Please try again later." },
+        {
+          status: 500,
+        },
+      );
     }
   };
 
@@ -69,7 +71,7 @@ function LoginPage() {
         <form className={`form ${styles["auth-form"]}`} onSubmit={handleSubmit}>
           <h2 className="heading">Sign In</h2>
           <div className="form-inputs">
-            <TextInput
+            <FormInput
               label="Username"
               id="username"
               inputProps={{
@@ -81,7 +83,7 @@ function LoginPage() {
                 },
               }}
             />
-            <TextInput
+            <FormInput
               label="Password"
               id="password"
               inputProps={{
@@ -97,13 +99,13 @@ function LoginPage() {
           <FormError message={error} onShow={isFormSubmitted} />
           <div className="form-actions">
             <button type="submit" className="tag" data-size="full-bleed" disabled={loading}>
-              Log In
+              {loading ? <FormBtnLoader loading={loading} /> : <p>Login</p>}
             </button>
             <p className="form-text">
               New to Brudda?{" "}
-              <a className="link" href="/sign-up">
+              <Link className="link" to="/sign-up">
                 Sign Up
-              </a>
+              </Link>
             </p>
           </div>
         </form>
