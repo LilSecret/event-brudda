@@ -1,6 +1,7 @@
 .heading {
   font-weight: 500;
   font-family: var(--ff-accent);
+  margin-bottom: 8px;
 
   h1& {
     font-size: 896px;
@@ -68,6 +69,9 @@
 .tag {
   background-color: var(--clr-primary-400);
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
   text-align: center;
   font-weight: bold;
   font-size: 18px;
@@ -156,4 +160,8 @@
 
 .link {
   color: var(--clr-accent-400);
+}
+
+.error {
+  color: var(--clr-red-400);
 }

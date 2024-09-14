@@ -1,7 +1,7 @@
 import { TState } from "./States";
 
 export type TUser = {
-  userId: number;
+  id: string;
   username: string;
   password: string;
   firstName: string;
