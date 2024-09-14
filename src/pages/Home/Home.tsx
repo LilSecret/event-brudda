@@ -35,7 +35,7 @@ function HomePage() {
       </section>
       <section className="section text-center">
         {events.map((event) => {
-          return <Event event={event} />;
+          return <Event key={event.id} event={event} />;
         })}
       </section>
       <SAboutUs />
